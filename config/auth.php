@@ -58,8 +58,8 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
-    'providers' => [
+  // them vao
+     'providers' => [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,

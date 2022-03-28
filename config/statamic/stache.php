@@ -78,11 +78,11 @@ return [
         'assets' => [
             'class' => Stores\AssetsStore::class,
         ],
-
-        'users' => [
-            'class' => Stores\UsersStore::class,
-            'directory' => base_path('users'),
-        ],
+         //them vao
+        // 'users' => [
+        //     'class' => Stores\UsersStore::class,
+        //     'directory' => base_path('users'),
+        // ],
 
     ],
 
