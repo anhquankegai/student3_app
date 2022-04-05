@@ -1,0 +1,78 @@
+<div class="container-fluid bg-3 text-center mt-5">  
+  <h3>Danh sách sinh viên</h3>
+  <form action="" method="get">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+              <input type="search" class="form-control" placeholder="Search..." 
+              name="search" value="">
+            </div>
+            <div class="col-md-1 col-sm-1">
+              <button class="btn btn-primary ">Search</button>
+            </div>
+        </div>
+  </form><hr>
+  <table class="table table-striped class  zebra-stripes table-bordered">
+      <thead>
+        <tr>
+          <th>Học Tên</th>
+          <th class="text-center">Mã sinh viên</th>
+          <th>Email</th>
+          <th>Ngày sinh</th>
+          <th>Ngành học</th>
+          <th>Tác vụ</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          {{ collection:student paginate="5" as="page" }}
+             {{ page }}
+                <tr>
+                  <td >{{ name  }}</td>
+                  <td class="text-center">{{ mssv }}</td>
+                  <td>{{ email }}</td>
+                  <td>{{ birthday }}</td>
+                  <td>{{ major }}</td>
+                  <td class="text-center">  
+                  <a href="#">
+                      <div class="btn btn-primary btn-smal">Sửa</div>
+                  </a>
+                      <a  href="#">
+                      <div class="btn btn-warning btn-small">Xóa</div>
+                      </a>
+                  </td>
+                </tr> 
+             {{ /page }}
+             {{ paginate }}
+             <nav aria-label="Page navigation example">
+               <ul class="pagination">
+                 <li class="page-item">
+                   <a class="page-link" href="{{ prev_page }}" aria-label="Previous">
+                     <span aria-hidden="true">&laquo;</span>
+                     <span class="sr-only">prev</span>
+                   </a>
+                 </li>
+                 <li class="page-item">
+                  <a class="page-link" href="{{ current_page }}" >
+                    <span aria-hidden="true"></span>
+                    <span class="sr-only">{{ current_page}}</span>
+                  </a>
+                </li>
+                 
+                   <a class="page-link" href="{{ next_page }}" aria-label="Next">
+                     <span aria-hidden="true">&raquo;</span>
+                     <span class="sr-only">next</span>
+                   </a>
+                 </li>
+               </ul>
+             </nav>   
+           {{ /paginate }}
+          {{ /collection:student }}    
+      </tbody>
+    </table>
+   
+
+    <hr>
+    <a href="#">
+      <div class="btn btn-primary btn-lg">Thêm sinh viên</div>
+    </a>
+</div>
